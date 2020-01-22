@@ -1,0 +1,46 @@
+﻿@model IEnumerable<KurumsalWebProjesi.Models.Model.Hizmet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<p>
+    <a href="/Hizmets/Create/"> <input type="button" value="Ekle" class="btn btn-primary" />  </a>
+</p>
+<table class="table table-bordered  ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResimUrl)
+        </th>
+        <th>İşlemler</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr >
+        <td>
+            @Html.DisplayFor(modelItem => item.Baslik)
+        </td>
+        <td >
+            @Html.Raw(item.Aciklama)
+        </td>
+        <td>
+            <img class="img-responsive" src="@item.ResimUrl" width="50" height="40" />
+        </td>
+        <td>
+            <a href="/Hizmets/Edit/@item.HizmetId"> <input type="button" class="btn btn-success" value="Güncelle" /> </a>
+            &nbsp;&nbsp;
+            <a href="/Hizmets/Delete/@item.HizmetId"> <input type="button" class="btn btn-danger" value="Sil" /> </a>
+
+        </td>
+    </tr>
+}
+
+</table>

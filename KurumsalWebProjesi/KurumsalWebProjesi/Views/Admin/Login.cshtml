@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yetkili Giriş</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/Content/adminfolder/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/Content/adminfolder/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/Content/adminfolder/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/Content/adminfolder/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/Content/adminfolder/css/style.css" rel="stylesheet">
+    <link href="/Content/adminfolder/css/style-responsive.css" rel="stylesheet" />
+
+</head>
+
+
+
+<body>
+
+
+
+          
+
+    <div>
+        <form class="login-form" method="post" action="">
+            <div class="login-wrap">
+
+
+                <p class="login-img"><i class="icon_lock_alt"></i></p>
+                <p class=" alert">@ViewBag.uyari</p>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_profile"></i></span>
+                    <input type="text" class="form-control" name="AdminEposta" placeholder="E posta" autofocus>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                    <input type="password" name="Sifre" class="form-control" placeholder="Şifre">
+                </div>
+               
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Giriş Yap</button> 
+              
+            </div>
+        </form>
+    </div>
+</body>
+</html>

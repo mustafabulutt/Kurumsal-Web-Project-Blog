@@ -1,0 +1,59 @@
+﻿@model IEnumerable<KurumsalWebProjesi.Models.Model.Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<header class="panel-heading">
+
+
+    <a href="/Blog/Create/"> <input class="btn btn-primary" type="button" value="Ekle" /> </a>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BLOG KAYITLARI
+
+</header>
+
+
+<table id="myTable" class="table table-striped table-bordered">
+
+
+    <thead>
+        <tr>
+
+            <th> Başlık</th>
+            <th> Kategori</th>
+            <th>Resim</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+
+
+
+        <tbody>
+            <tr>
+
+                <td> @item.Baslik</td>
+                <td> @item.Kategori.KategoriAd</td>
+                <td><img src="@item.ResimUrl" width="100" height="100" /></td>
+                <td>
+
+                    <a href="/Blog/Edit/@item.BlogId"> <input type="button" class="btn btn-success" value="Güncelle" />  </a>
+                    <a href="/Blog/Delete/@item.BlogId"> <input class="btn btn-danger" type="button" value="Sil" />  </a>
+
+
+
+
+                </td>
+            </tr>
+
+        </tbody>
+    }
+
+</table>
+
+
+
+

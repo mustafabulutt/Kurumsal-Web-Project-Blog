@@ -1,0 +1,57 @@
+﻿@model IEnumerable<KurumsalWebProjesi.Models.Model.Yorum>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+ 
+
+<table class="table">
+    <tr>
+        <th>
+            Blog Post
+        </th>
+        <th>
+            Yorumu Yazan
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+           Yorum
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Onay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.blog.Baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Icerik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Onay)
+        </td>
+        <td>
+            <a href="/Yorum/Edit/@item.YorumId"> <input type="button" class="btn btn-success" value="Güncelle" /> </a>
+            <a href="/Yorum/Delete/@item.YorumId"> <input type="button" class="btn btn-danger" value="Sil" /> </a>
+
+
+        </td>
+    </tr>
+}
+
+</table>

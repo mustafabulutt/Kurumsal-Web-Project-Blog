@@ -1,0 +1,64 @@
+﻿@model KurumsalWebProjesi.Models.Model.Slider
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Edit","Slider",FormMethod.Post,new { enctype="multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal border-top ">
+        <center>   <h4>Ana Sayfa Resim Güncelleme</h4> </center>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SliderId)
+
+    <center>
+        <div class="form-group ">
+            <img src="@Model.ResimUrl" height="200" width="500" />
+            <br />
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Baslik, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Baslik, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Baslik, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Acıklama, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Acıklama, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Acıklama, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <input type="file" class="btn btn-default" name="ResimUrl"  value="" />
+            </div>
+
+        </div>
+
+       
+    </center>
+
+        
+
+
+        <center>
+            <div class="form-group border-top">
+                <div class=" col-md-12">
+
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a href="/Slider/">   <input type="button" value="İptal" class="btn btn-danger" /></a>
+
+                </div>
+            </div>
+        </center>
+    </div>
+}
+
+

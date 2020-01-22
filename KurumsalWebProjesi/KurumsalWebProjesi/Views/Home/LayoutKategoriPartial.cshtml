@@ -1,0 +1,12 @@
+﻿@model ICollection<KurumsalWebProjesi.Models.Model.Kategori>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li><a href="/Home/Blog/@item.KategoriId">@item.KategoriAd</a></li>
+}
+
+
+

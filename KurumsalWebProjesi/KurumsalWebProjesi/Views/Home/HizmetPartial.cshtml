@@ -1,0 +1,50 @@
+﻿@model ICollection<KurumsalWebProjesi.Models.Model.Hizmet>
+@{
+
+    Layout = null;
+}
+
+    <div id="fh5co-practice" class="fh5co-bg-section">
+        <div class="container">
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2>Hizmetlerimiz</h2>
+                    <p>Hızlı Teslimat - Güleryüz - Profesyonel İşçilik</p>
+                </div>
+            </div>
+            <div class="row">
+                @{ 
+                    var hizmett = (from x in Model
+                        select new
+                        {
+                            KategoriAdi = x.Baslik,
+                            
+                        }).Take(3);
+                }
+
+                @foreach (var item in hizmett)
+                {
+
+                    
+
+                    <div class="col-md-4 text-center animate-box">
+                        <div class="services">
+                            <span class="icon">
+                                <i class="icon-home"></i>
+                            </span>
+                            <div class="desc">
+                                <a href=""> <h3>@item.KategoriAdi</h3> </a>
+                               
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="col-md-12 text-center animate-box">
+                    <p><a class="btn btn-primary btn-lg btn-learn" href="/Home/Hizmetlerimiz/">Daha Fazla</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

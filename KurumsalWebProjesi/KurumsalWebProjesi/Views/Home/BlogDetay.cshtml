@@ -1,0 +1,108 @@
+﻿@model ICollection<KurumsalWebProjesi.Models.Model.Blog>
+
+
+@foreach (var item in Model)
+{
+
+
+
+    <div>
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Post Content Column -->
+                <div class="col-lg-8">
+
+                    <!-- Title -->
+                    <h1 class="mt-4">@item.Baslik</h1>
+
+                    <!-- Author -->
+
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img class="img-fluid img-responsive rounded" width="700" src="@item.ResimUrl" alt="">
+
+                    <hr>
+
+                    <!-- Post Content -->
+                    @Html.Raw(item.Icerik)
+
+                    <hr>
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3>Yorum Yap</h3>
+                            <form>
+                                <div>
+                                    <input type="text" id="adsoyad" placeholder="Adınız Soyadınız" required class="form-control" />
+                                    <br />
+                                    <input type="email" id="eposta" placeholder="Mail Adresiniz" required class="form-control" />
+                                    <br />
+                                    <textarea typeof="text" id="icerik" required class="form-control"></textarea>
+                                    <br />
+                                    <button type="submit" class="btn btn-success" id="gonder">Yorum Yap</button>
+
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+           
+
+
+
+                   @{ 
+                       Html.RenderAction("BlogYorumlarıPartial", "Home");
+
+                   }
+
+
+                </div>
+
+                @{
+                    Html.RenderAction("KategorilerBlogDetayPartıal", "Home");
+                }
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+
+
+    </div>
+
+
+    <script src="~/Content/sitefolder/js/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#gonder").click(function () {
+            var adisoyadi = $("#adsoyad").val();
+            var epostasi = $("#eposta").val();
+            var yorumunuz = $("#icerik").val();
+            $.ajax({
+                url: '/Home/YorumYap/',
+                data: {adsoyad:adisoyadi,eposta: epostasi,icerik:yorumunuz,blogid:@item.BlogId},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    alert("Yorumunuz eklendi, kontrol edildikten sonra yayınlanacaktır.");
+                 
+                }
+            });
+        });
+    })
+
+    </script>
+
+}
+

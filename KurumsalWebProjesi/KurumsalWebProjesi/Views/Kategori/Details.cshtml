@@ -1,0 +1,35 @@
+﻿@model KurumsalWebProjesi.Models.Model.Kategori
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div>
+    <h4>Kategori Detayları</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+ 
+    <a href="/Kategori/">   <input type="button" value="Geri Dön" class="btn btn-danger" /></a>
+</p>

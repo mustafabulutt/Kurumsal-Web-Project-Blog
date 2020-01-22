@@ -1,0 +1,14 @@
+﻿@model ICollection<KurumsalWebProjesi.Models.Model.Iletisim>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <ul class="fh5co-social-icons">
+        <li><a href="https://www.twitter.com/@item.Twitter"><i class="icon-twitter"></i></a></li>
+        <li><a href="https:/www.facebook.com/@item.Facebook"><i class="icon-facebook"></i></a></li>
+        <li><a href="@item.Whatsapp"><i class="icon-message"></i></a></li>
+        <li><a href="https:/www.ınstagram.com/@item.Instagram"><i class="icon-instagram"></i></a></li>
+    </ul>
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<KurumsalWebProjesi.Models.Model.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Ana Sayfa Görseli
+        </th>
+        <th>
+           Başlık
+        </th>
+        <th>
+            Açıklama
+        </th>
+        <th> İşlemler</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        <img src="@item.ResimUrl" width="100" height="100" />
+    </td>
+    <td>
+        @item.Baslik
+    </td>
+    <td>
+        @item.Acıklama
+
+    </td>
+    <td>
+        <a href="/Slider/Edit/@item.SliderId"> <input type="button" class="btn btn-success" value="Güncelle" /> </a>
+    </td>
+</tr>
+}
+
+</table>

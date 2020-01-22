@@ -1,0 +1,12 @@
+﻿@model ICollection<KurumsalWebProjesi.Models.Model.Kategori>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    
+    <ul class="fh5co-footer-links">
+        <li><a href="">@item.KategoriAd</a></li>
+    </ul>
+}

@@ -1,0 +1,58 @@
+﻿@model KurumsalWebProjesi.Models.Model.Blog
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Seçilen Blog Ve İçerik Silinecek Onaylıyormusunuz ? </h3>
+<div class="table-bordered">
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt ">
+            Başlık :
+        </dt>
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+        <br />
+        <dt>
+            İçerik :
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Icerik)
+        </dd>
+
+        <br />
+
+        <dt>
+            Resim :
+        </dt>
+
+        <dd>
+            <img src="@Model.ResimUrl" height="100" width="200" />
+           
+
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Sil" class="btn btn-danger" />  &nbsp;
+    <a href="/Blog/"><input type="button" class="btn btn-primary" value="İptal" /> </a>
+
+   
+</div>
+    }
+</div>

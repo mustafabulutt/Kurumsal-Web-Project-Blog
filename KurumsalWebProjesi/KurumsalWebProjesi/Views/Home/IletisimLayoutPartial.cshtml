@@ -1,0 +1,19 @@
+﻿@model ICollection<KurumsalWebProjesi.Models.Model.Iletisim>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+
+    <h4>iletişim</h4>
+    <ul class="fh5co-footer-links">
+        <li>@item.Adres </li>
+        <li><a href="tel://@item.Telefon">@item.Telefon</a></li>
+        <li>fax: @item.Fax</li>
+      
+    </ul>
+
+
+}
+

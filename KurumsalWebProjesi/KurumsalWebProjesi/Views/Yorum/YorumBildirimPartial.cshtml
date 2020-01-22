@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+
+}
+
+
+
+    <li id="alert_notificatoin_bar" class="dropdown ">
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+            <i class="icon-bell-l"></i>
+            <span class="badge bg-important"> @ViewBag.yorum</span>
+        </a>
+        <ul class="dropdown-menu extended notification">
+            <div class="notify-arrow notify-arrow-blue"></div>
+            <li>
+                <p class="blue"> Bekleyen  @ViewBag.yorum adet yorum var!</p>
+            </li>
+
+
+            <li>
+                <a class="text-center" href="/Yorum/">Bütün Yorumları Gör</a>
+            </li>
+        </ul>
+    </li>
+

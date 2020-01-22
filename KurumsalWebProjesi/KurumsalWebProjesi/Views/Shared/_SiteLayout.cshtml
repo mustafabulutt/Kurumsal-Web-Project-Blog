@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/Content/sitefolder/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="/Content/sitefolder/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/Content/sitefolder/css/bootstrap.css">
+
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="/Content/sitefolder/css/magnific-popup.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="/Content/sitefolder/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Content/sitefolder/css/owl.theme.default.min.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="/Content/sitefolder/css/flexslider.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="/Content/sitefolder/css/style.css">
+
+
+
+    <!-- Modernizr JS -->
+    <script src="/Content/sitefolder/js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+   
+
+
+
+</head>
+
+
+<body>
+    <nav class="fh5co-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="/Home/">BULUT<span>.</span></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li class="active"><a href="/Home/">Ana Sayfa</a></li>
+                            <li class="active"><a href="/Home/Hizmetlerimiz">Hizmetler</a></li>
+
+                            <li class="has-dropdown active">
+                                <a href="/Home/Blog">Blog</a>
+                                <ul class="dropdown">
+                                   @{ 
+                                       Html.RenderAction("LayoutKategoriPartial", "Home");
+                                   }
+                                </ul>
+                            </li>
+                            <li class="active"><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                            <li class="active"><a href="/Home/Iletisim/">İletişim</a></li>
+
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    @RenderBody()
+
+
+
+    <footer id="fh5co-footer" role="contentinfo">
+        <div class="container">
+            <div class="row row-pb-md text-center">
+
+                <div class="col-md-3 col-md-push-1">
+                    <h4>Menüler</h4>
+                    <ul class="fh5co-footer-links">
+                        <li class="active"><a href="/Home/">Ana Sayfa</a></li>
+                        <li class="active"><a href="/Home/Hizmetlerimiz">Hizmetler</a></li>
+                        <li class="active"><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                        <li class="active"><a href="/Home/Iletisim/">İletişim</a></li>
+                        <li class="active"><a href="/Home/Blog/">Blog</a></li>
+
+
+                    </ul>
+                </div>
+
+                <div class="col-md-3 col-md-push-1">
+
+                    @{Html.RenderAction("IletisimLayoutPartial", "Home");
+                    }
+
+                </div>
+
+                <div class="col-md-3 col-md-push-1">
+                    <h4>Blog Kategorileri</h4>
+                    @{
+                        Html.RenderAction("BlogKategoriPartialLayout", "Home");
+                    }
+                </div>
+
+            </div>
+
+            <div class="row copyright">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <small class="block">&copy; 2020 mbulut Back End Developer</small>
+                        <small class="block">Designed by <a href="http://www.mbulut.com/" target="_blank">Mbulut</a> Contact: <a href="http://www.mbulut.com" target="_blank">Web Site</a></small>
+                    </p>
+                    <p>
+                        @{
+                            Html.RenderAction("LayoutSosyalAgPartial", "Home");
+                        }
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/Content/sitefolder/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="/Content/sitefolder/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="/Content/sitefolder/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="/Content/sitefolder/js/jquery.waypoints.min.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="/Content/sitefolder/js/jquery.stellar.min.js"></script>
+    <!-- Carousel -->
+    <script src="/Content/sitefolder/js/owl.carousel.min.js"></script>
+    <!-- Flexslider -->
+    <script src="/Content/sitefolder/js/jquery.flexslider-min.js"></script>
+    <!-- countTo -->
+    <script src="/Content/sitefolder/js/jquery.countTo.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/Content/sitefolder/js/jquery.magnific-popup.min.js"></script>
+    <script src="/Content/sitefolder/js/magnific-popup-options.js"></script>
+    <!-- Main -->
+    <script src="/Content/sitefolder/js/main.js"></script>
+
+</body>
+
+</html>

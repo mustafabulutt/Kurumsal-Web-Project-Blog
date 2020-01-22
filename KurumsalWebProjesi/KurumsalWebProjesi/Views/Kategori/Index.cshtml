@@ -1,0 +1,44 @@
+﻿@model IEnumerable<KurumsalWebProjesi.Models.Model.Kategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<p>
+    <a href="/Kategori/Create/">  <input type="button" class="btn btn-primary" value="Ekle" /> </a>
+</p>
+<table class="table table-bordered ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriAciklama)
+        </th>
+        <th> İşlemler </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KategoriAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KategoriAciklama)
+        </td>
+        <td>
+            <a href="/Kategori/Edit/@item.KategoriId">  <input type="button" class="btn btn-success" value="Güncelle  " /> </a>
+            <a href="/Kategori/Details/@item.KategoriId">  <input type="button" class="btn btn-warning" value="Detay" /> </a>
+            <a href="/Kategori/Delete/ @item.KategoriId">  <input type="button" class="btn btn-danger" value="Sil" /> </a>
+
+
+
+            
+        </td>
+    </tr>
+}
+
+</table>
